@@ -1,0 +1,3 @@
+/*
+  All js goes here
+*/
