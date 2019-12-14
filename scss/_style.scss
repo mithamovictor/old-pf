@@ -2,14 +2,95 @@
   All styles goes here
 ***********************/
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #3a0101;
-  color: #fefefe;
-  font-size: 1.5rem;
-  font-family: sans-serif;
-  font-weight: 600;
+.mainbody {
+  // min-height: 100vh;
+
+  header {
+    background-color: $primary-color;
+
+    .menu li { 
+      @include breakpoint (small only) {
+        width: 100%;
+        min-width: 100%;
+      }
+
+      a {
+        color: $medium-gray;
+      }
+    }
+
+    h1, p {
+      color: $medium-gray;
+    }
+
+    h1 {
+      font-family: 'Montserrat Subrayada', sans-serif;
+    }
+
+    .circle-1 {
+      background: lighten($primary-color, 5%);
+      border-radius: 50%;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      max-width: 260px;
+
+      @include breakpoint(medium) {
+        max-width: 275px;
+      }
+
+      .circle-2 {
+        background: lighten($primary-color, 10%);
+        border-radius: 50%;
+        padding: 1rem;
+
+        .circle-3 {
+          background: lighten($primary-color, 15%);
+          border-radius: 50%;
+          padding: 1rem;
+
+          .photo {
+            border-radius: 50%;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+
+    .surname {
+      line-height: 1;
+      margin: 0;
+      font-size: 2.5rem;
+
+      @include breakpoint(medium) {
+        font-size: 5rem;
+      }
+    }
+
+    .firstname {
+      margin: 0;
+      line-height: 1;
+      font-size: 3.3rem;
+
+      @include breakpoint(medium) {
+        font-size: 6.5rem;
+      }
+    }
+
+    .jd {
+      font-size: 1.1rem;
+
+      @include breakpoint(medium) {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  footer p{
+    margin: 0;
+    font-size: 0.8rem;
+
+    @include breakpoint(medium) {
+      font-size: 1rem;
+    }
+  }
 }

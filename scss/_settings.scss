@@ -60,165 +60,167 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-// @import 'util/util';
+@import 'util/util';
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,400i|Montserrat+Subrayada:700&display=swap');
 
-// // 1. Global
-// // ---------
+// 1. Global
+// ---------
 
-// $global-font-size: 100%;
-// $global-width: rem-calc(1200);
-// $global-lineheight: 1.5;
-// $foundation-palette: (
-//   primary: #1779ba,
-//   secondary: #767676,
-//   success: #3adb76,
-//   warning: #ffae00,
-//   alert: #cc4b37,
-// );
-// $light-gray: #e6e6e6;
-// $medium-gray: #cacaca;
-// $dark-gray: #8a8a8a;
-// $black: #0a0a0a;
-// $white: #fefefe;
-// $body-background: $white;
-// $body-font-color: $black;
-// $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-// $body-antialiased: true;
-// $global-margin: 1rem;
-// $global-padding: 1rem;
-// $global-position: 1rem;
-// $global-weight-normal: normal;
-// $global-weight-bold: bold;
-// $global-radius: 0;
-// $global-menu-padding: 0.7rem 1rem;
-// $global-menu-nested-margin: 1rem;
-// $global-text-direction: ltr;
-// $global-flexbox: true;
-// $global-prototype-breakpoints: false;
-// $global-button-cursor: auto;
-// $global-color-pick-contrast-tolerance: 0;
-// $print-transparent-backgrounds: true;
-// $print-hrefs: true;
+$global-font-size: 120%;
+$global-width: rem-calc(960);
+$global-lineheight: 1.5;
+$foundation-palette: (
+  primary: #01011b,
+  secondary: #767676,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+$light-gray: #e6e6e6;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$gray: #6b6b6b;
+$black: #0a0a0a;
+$white: #fefefe;
+$body-background: $white;
+$body-font-color: $gray;
+$body-font-family: 'Barlow', sans-serif;
+$body-antialiased: true;
+$global-margin: 1rem;
+$global-padding: 1rem;
+$global-position: 1rem;
+$global-weight-normal: normal;
+$global-weight-bold: bold;
+$global-radius: 0;
+$global-menu-padding: 0.7rem 1rem;
+$global-menu-nested-margin: 1rem;
+$global-text-direction: ltr;
+$global-flexbox: true;
+$global-prototype-breakpoints: false;
+$global-button-cursor: auto;
+$global-color-pick-contrast-tolerance: 0;
+$print-transparent-backgrounds: true;
+$print-hrefs: true;
 
-// @include add-foundation-colors;
+@include add-foundation-colors;
 
-// // 2. Breakpoints
-// // --------------
+// 2. Breakpoints
+// --------------
 
-// $breakpoints: (
-//   small: 0,
-//   medium: 640px,
-//   large: 1024px,
-//   xlarge: 1200px,
-//   xxlarge: 1440px,
-// );
-// $breakpoints-hidpi: (
-//   hidpi-1: 1,
-//   hidpi-1-5: 1.5,
-//   hidpi-2: 2,
-//   retina: 2,
-//   hidpi-3: 3
-// );
-// $print-breakpoint: large;
-// $breakpoint-classes: (small medium large);
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+);
+$breakpoints-hidpi: (
+  hidpi-1: 1,
+  hidpi-1-5: 1.5,
+  hidpi-2: 2,
+  retina: 2,
+  hidpi-3: 3
+);
+$print-breakpoint: large;
+$breakpoint-classes: (small medium large);
 
-// // 3. The Grid
-// // -----------
+// 3. The Grid
+// -----------
 
-// $grid-row-width: $global-width;
-// $grid-column-count: 12;
-// $grid-column-gutter: (
-//   small: 20px,
-//   medium: 30px,
-// );
-// $grid-column-align-edge: true;
-// $grid-column-alias: 'columns';
-// $block-grid-max: 8;
+$grid-row-width: $global-width;
+$grid-column-count: 12;
+$grid-column-gutter: (
+  small: 20px,
+  medium: 30px,
+);
+$grid-column-align-edge: true;
+$grid-column-alias: 'columns';
+$block-grid-max: 8;
 
-// // 4. Base Typography
-// // ------------------
+// 4. Base Typography
+// ------------------
 
-// $header-font-family: $body-font-family;
-// $header-font-weight: $global-weight-normal;
-// $header-font-style: normal;
-// $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-// $header-color: inherit;
-// $header-lineheight: 1.4;
-// $header-margin-bottom: 0.5rem;
-// $header-styles: (
-//   small: (
-//     'h1': ('font-size': 24),
-//     'h2': ('font-size': 20),
-//     'h3': ('font-size': 19),
-//     'h4': ('font-size': 18),
-//     'h5': ('font-size': 17),
-//     'h6': ('font-size': 16),
-//   ),
-//   medium: (
-//     'h1': ('font-size': 48),
-//     'h2': ('font-size': 40),
-//     'h3': ('font-size': 31),
-//     'h4': ('font-size': 25),
-//     'h5': ('font-size': 20),
-//     'h6': ('font-size': 16),
-//   ),
-// );
-// $header-text-rendering: optimizeLegibility;
-// $small-font-size: 80%;
-// $header-small-font-color: $medium-gray;
-// $paragraph-lineheight: 1.6;
-// $paragraph-margin-bottom: 1rem;
-// $paragraph-text-rendering: optimizeLegibility;
-// $enable-code-inline: true;
-// $anchor-color: $primary-color;
-// $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
-// $anchor-text-decoration: none;
-// $anchor-text-decoration-hover: none;
-// $hr-width: $global-width;
-// $hr-border: 1px solid $medium-gray;
-// $hr-margin: rem-calc(20) auto;
-// $list-lineheight: $paragraph-lineheight;
-// $list-margin-bottom: $paragraph-margin-bottom;
-// $list-style-type: disc;
-// $list-style-position: outside;
-// $list-side-margin: 1.25rem;
-// $list-nested-side-margin: 1.25rem;
-// $defnlist-margin-bottom: 1rem;
-// $defnlist-term-weight: $global-weight-bold;
-// $defnlist-term-margin-bottom: 0.3rem;
-// $blockquote-color: $dark-gray;
-// $blockquote-padding: rem-calc(9 20 0 19);
-// $blockquote-border: 1px solid $medium-gray;
-// $enable-cite-block: true;
-// $keystroke-font: $font-family-monospace;
-// $keystroke-color: $black;
-// $keystroke-background: $light-gray;
-// $keystroke-padding: rem-calc(2 4 0);
-// $keystroke-radius: $global-radius;
-// $abbr-underline: 1px dotted $black;
+$header-font-family: $body-font-family;
+$header-font-weight: 600;
+$header-font-style: normal;
+$font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
+$header-color: lighten(get-color(primary), 15%);
+$header-lineheight: 1.4;
+$header-margin-bottom: 0.5rem;
+$header-styles: (
+  small: (
+    'h1': ('font-size': 24),
+    'h2': ('font-size': 20),
+    'h3': ('font-size': 19),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 40),
+    'h3': ('font-size': 31),
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
+  ),
+);
+$header-text-rendering: optimizeLegibility;
+$small-font-size: 80%;
+$header-small-font-color: $medium-gray;
+$paragraph-lineheight: 1.6;
+$paragraph-margin-bottom: 1rem;
+$paragraph-text-rendering: optimizeLegibility;
+$enable-code-inline: true;
+$anchor-color: $primary-color;
+$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-text-decoration: none;
+$anchor-text-decoration-hover: none;
+$hr-width: $global-width;
+$hr-border: 1px solid $medium-gray;
+$hr-margin: rem-calc(20) auto;
+$list-lineheight: $paragraph-lineheight;
+$list-margin-bottom: $paragraph-margin-bottom;
+$list-style-type: disc;
+$list-style-position: outside;
+$list-side-margin: 1.25rem;
+$list-nested-side-margin: 1.25rem;
+$defnlist-margin-bottom: 1rem;
+$defnlist-term-weight: $global-weight-bold;
+$defnlist-term-margin-bottom: 0.3rem;
+$blockquote-color: $dark-gray;
+$blockquote-padding: rem-calc(9 20 0 19);
+$blockquote-border: 1px solid $medium-gray;
+$enable-cite-block: true;
+$keystroke-font: $font-family-monospace;
+$keystroke-color: $black;
+$keystroke-background: $light-gray;
+$keystroke-padding: rem-calc(2 4 0);
+$keystroke-radius: $global-radius;
+$abbr-underline: 1px dotted $black;
 
-// // 5. Typography Helpers
-// // ---------------------
+// 5. Typography Helpers
+// ---------------------
 
-// $lead-font-size: $global-font-size * 1.25;
-// $lead-lineheight: 1.6;
-// $subheader-lineheight: 1.4;
-// $subheader-color: $dark-gray;
-// $subheader-font-weight: $global-weight-normal;
-// $subheader-margin-top: 0.2rem;
-// $subheader-margin-bottom: 0.5rem;
-// $stat-font-size: 2.5rem;
-// $cite-color: $dark-gray;
-// $cite-font-size: rem-calc(13);
-// $cite-pseudo-content: '\2014 \0020';
-// $code-color: $black;
-// $code-font-family: $font-family-monospace;
-// $code-font-weight: $global-weight-normal;
-// $code-background: $light-gray;
-// $code-border: 1px solid $medium-gray;
-// $code-padding: rem-calc(2 5 1);
-// $code-block-padding: 1rem;
-// $code-block-margin-bottom: 1.5rem;
+$lead-font-size: $global-font-size * 1.25;
+$lead-lineheight: 1.6;
+$subheader-lineheight: 1.4;
+$subheader-color: $dark-gray;
+$subheader-font-weight: $global-weight-normal;
+$subheader-margin-top: 0.2rem;
+$subheader-margin-bottom: 0.5rem;
+$stat-font-size: 2.5rem;
+$cite-color: $dark-gray;
+$cite-font-size: rem-calc(13);
+$cite-pseudo-content: '\2014 \0020';
+$code-color: $black;
+$code-font-family: $font-family-monospace;
+$code-font-weight: $global-weight-normal;
+$code-background: $light-gray;
+$code-border: 1px solid $medium-gray;
+$code-padding: rem-calc(2 5 1);
+$code-block-padding: 1rem;
+$code-block-margin-bottom: 1.5rem;
 
 // // 6. Abide
 // // --------
@@ -231,8 +233,8 @@
 // $input-error-font-size: rem-calc(12);
 // $input-error-font-weight: $global-weight-bold;
 
-// // 7. Accordion
-// // ------------
+// 7. Accordion
+// ------------
 
 // $accordion-background: $white;
 // $accordion-plusminus: true;
@@ -247,8 +249,8 @@
 // $accordion-content-color: $body-font-color;
 // $accordion-content-padding: 1rem;
 
-// // 8. Accordion Menu
-// // -----------------
+// 8. Accordion Menu
+// -----------------
 
 // $accordionmenu-padding: $global-menu-padding;
 // $accordionmenu-nested-margin: $global-menu-nested-margin;
@@ -390,8 +392,8 @@
 // $drilldown-arrow-color: $primary-color;
 // $drilldown-arrow-size: 6px;
 
-// // 17. Dropdown
-// // ------------
+// 17. Dropdown
+// ------------
 
 // $dropdown-padding: 1rem;
 // $dropdown-background: $body-background;
@@ -405,22 +407,22 @@
 //   large: 400px,
 // );
 
-// // 18. Dropdown Menu
-// // -----------------
+// 18. Dropdown Menu
+// -----------------
 
-// $dropdownmenu-arrows: true;
-// $dropdownmenu-arrow-color: $anchor-color;
-// $dropdownmenu-arrow-size: 6px;
-// $dropdownmenu-arrow-padding: 1.5rem;
-// $dropdownmenu-min-width: 200px;
-// $dropdownmenu-background: null;
-// $dropdownmenu-submenu-background: $white;
-// $dropdownmenu-padding: $global-menu-padding;
-// $dropdownmenu-nested-margin: 0;
-// $dropdownmenu-submenu-padding: $dropdownmenu-padding;
-// $dropdownmenu-border: 1px solid $medium-gray;
-// $dropdown-menu-item-color-active: get-color(primary);
-// $dropdown-menu-item-background-active: transparent;
+$dropdownmenu-arrows: true;
+$dropdownmenu-arrow-color: $anchor-color;
+$dropdownmenu-arrow-size: 6px;
+$dropdownmenu-arrow-padding: 1.5rem;
+$dropdownmenu-min-width: 200px;
+$dropdownmenu-background: null;
+$dropdownmenu-submenu-background: $white;
+$dropdownmenu-padding: $global-menu-padding;
+$dropdownmenu-nested-margin: 0;
+$dropdownmenu-submenu-padding: $dropdownmenu-padding;
+$dropdownmenu-border: 1px solid $medium-gray;
+$dropdown-menu-item-color-active: get-color(primary);
+$dropdown-menu-item-background-active: transparent;
 
 // // 19. Flexbox Utilities
 // // ---------------------
@@ -488,20 +490,20 @@
 // $mediaobject-section-padding: $global-padding;
 // $mediaobject-image-width-stacked: 100%;
 
-// // 23. Menu
-// // --------
+// 23. Menu
+// --------
 
-// $menu-margin: 0;
-// $menu-nested-margin: $global-menu-nested-margin;
-// $menu-items-padding: $global-menu-padding;
-// $menu-simple-margin: 1rem;
-// $menu-item-color-active: $white;
-// $menu-item-color-alt-active: $black;
-// $menu-item-background-active: get-color(primary);
-// $menu-icon-spacing: 0.25rem;
-// $menu-state-back-compat: true;
-// $menu-centered-back-compat: true;
-// $menu-icons-back-compat: true;
+$menu-margin: 0;
+$menu-nested-margin: $global-menu-nested-margin;
+$menu-items-padding: $global-menu-padding;
+$menu-simple-margin: 1rem;
+$menu-item-color-active: $white;
+$menu-item-color-alt-active: $black;
+$menu-item-background-active: get-color(primary);
+$menu-icon-spacing: 0.25rem;
+$menu-state-back-compat: true;
+$menu-centered-back-compat: true;
+$menu-icons-back-compat: true;
 
 // // 24. Meter
 // // ---------
@@ -842,16 +844,16 @@
 // $thumbnail-transition: box-shadow 200ms ease-out;
 // $thumbnail-radius: $global-radius;
 
-// // 53. Title Bar
-// // -------------
+// 53. Title Bar
+// -------------
 
-// $titlebar-background: $black;
-// $titlebar-color: $white;
-// $titlebar-padding: 0.5rem;
-// $titlebar-text-font-weight: bold;
-// $titlebar-icon-color: $white;
-// $titlebar-icon-color-hover: $medium-gray;
-// $titlebar-icon-spacing: 0.25rem;
+$titlebar-background: transparent;
+$titlebar-color: $medium-gray;
+$titlebar-padding: 0.5rem;
+$titlebar-text-font-weight: bold;
+$titlebar-icon-color: $medium-gray;
+$titlebar-icon-color-hover: $medium-gray;
+$titlebar-icon-spacing: 1rem;
 
 // // 54. Tooltip
 // // -----------
@@ -868,28 +870,28 @@
 // $tooltip-pip-height: $tooltip-pip-width * 0.866;
 // $tooltip-radius: $global-radius;
 
-// // 55. Top Bar
-// // -----------
+// 55. Top Bar
+// -----------
 
-// $topbar-padding: 0.5rem;
-// $topbar-background: $light-gray;
-// $topbar-submenu-background: $topbar-background;
-// $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
-// $topbar-input-width: 200px;
-// $topbar-unstack-breakpoint: medium;
+$topbar-padding: 0.5rem;
+$topbar-background: transparent;
+$topbar-submenu-background: $topbar-background;
+$topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
+$topbar-input-width: 200px;
+$topbar-unstack-breakpoint: medium;
 
-// // 56. Xy Grid
-// // -----------
+// 56. Xy Grid
+// -----------
 
-// $xy-grid: true;
-// $grid-container: $global-width;
-// $grid-columns: 12;
-// $grid-margin-gutters: (
-//   small: 20px,
-//   medium: 30px
-// );
-// $grid-padding-gutters: $grid-margin-gutters;
-// $grid-container-padding: $grid-padding-gutters;
-// $grid-container-max: $global-width;
-// $xy-block-grid-max: 8;
+$xy-grid: true;
+$grid-container: $global-width;
+$grid-columns: 12;
+$grid-margin-gutters: (
+  small: 20px,
+  medium: 30px
+);
+$grid-padding-gutters: $grid-margin-gutters;
+$grid-container-padding: $grid-padding-gutters;
+$grid-container-max: $global-width;
+$xy-block-grid-max: 8;
 
